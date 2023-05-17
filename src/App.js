@@ -1,3 +1,4 @@
+import { Routes, Route } from "react-router-dom";
 import { Layout } from "./layout/Layout/Layout";
 import { Hello } from "./page/Hello/Hello";
 import { About } from "./page/About/About";
@@ -9,14 +10,22 @@ function App() {
   return (
     <>
       <Layout>
-        <Hello />
-        <About />
-        <Portfolio />
-        <Contact />
-        <NotFound />
+          <Routes>
+            <Route path="/" element={<Hello />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/portfolio" element={<Portfolio />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/notFound" element={<NotFound />} />
+          </Routes>
       </Layout>
     </>
   );
 }
 
 export default App;
+
+// <Hello />
+// <About />
+// <Portfolio />
+// <Contact />
+// <NotFound />
