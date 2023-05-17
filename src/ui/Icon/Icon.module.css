@@ -1,0 +1,15 @@
+.Icon__twitter,
+.Icon__facebook,
+.Icon__git {
+    width: 20px;
+    height: 20px;
+    translate: 0.3s;
+}
+
+.Icon__twitter:hover,
+.Icon__facebook:hover,
+.Icon__git:hover {
+    transform: scale(1.2);
+    translate: 0.3s;
+
+}

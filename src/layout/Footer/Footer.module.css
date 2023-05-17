@@ -1,0 +1,39 @@
+.footer {
+    flex: 0 0 auto;
+}
+
+.footer__menu {
+    display: flex;
+    align-items: center;
+    border-top: 1px solid #1E2D3D;
+    background: transparent;
+}
+
+.footer__menu>li {
+    border-right: 1px solid #1E2D3D;
+    border-top: none;
+    min-width: 52px;
+    padding: 15px 20px;
+    text-align: center;
+}
+
+.footer__menu>li:first-child {
+    border-left: none;
+}
+
+
+.footer__menu>li:last-child {
+    display: flex;
+    min-width: 150px;
+    margin-left: auto;
+    border-right: none;
+    border-left: 1px solid #1E2D3D;
+}
+
+
+.findMe {
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 24px;
+    color: #607B96;
+}

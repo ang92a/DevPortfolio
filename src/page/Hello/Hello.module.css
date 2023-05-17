@@ -1,0 +1,52 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.visitCard {
+    display: flex;
+    flex-direction: column;
+}
+
+.title {
+    margin-bottom: 80px;
+}
+
+
+.textHi {
+    font-size: 18px;
+    font-weight: 450;
+    line-height: 24px;
+    color: #E5E9F0;
+}
+
+.textTitle {
+    font-size: 62px;
+    font-weight: 400;
+    line-height: 81px;
+    color: #E5E9F0;
+}
+
+.textSubtitle {
+    font-size: 32px;
+    font-weight: 450;
+    line-height: 42px;
+    color: #4D5BCE;
+}
+
+.textComment {
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 21px;
+    color: #607B96;
+    margin-bottom: 10px;
+}
+
+
+.game {
+    background: transparent;
+    border: 1px solid #fff;
+    min-width: 510px;
+    min-height: 80%;
+    margin-left: 150px;
+}
