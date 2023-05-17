@@ -1,6 +1,9 @@
 import React from "react";
 
 export const About = () => {
-  return <aside> </aside>;
-  <article></article>
+  return (
+    <>
+      <p>Hi</p>
+    </>
+  );
 };
