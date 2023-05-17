@@ -25,5 +25,6 @@ ul {
 }
 
 .active {
-  color: red
+  border-bottom: 3px solid #FEA55F;
+  margin-bottom: -3px;
 }

@@ -1,34 +1,10 @@
-/* .link__header {
+.link__header {
     display: block;
-    position: relative;
     padding: 18px 22px;
     color: rgba(96, 123, 150, 1);
-} */
-
-/* .link__header__active {
-color: red;
-    position: absolute;
-    content: "";
-    left: 0;
-    bottom: 0px;
-    background-color: #FEA55F;
-    width: 100%;
-    height: 3px;
-
-} */
-
-
-
-/* .link__header:after .link__header:hover:after {
-    width: 100%;
-} */
-
-/* .link__footer {
-    color: rgba(96, 123, 150, 1);
-    padding: 0 7px 0 0;
 }
 
+.link__header:hover{
+    color: #fff;
+}
 
-.link__footer:hover:after {
-    width: 0;
-} */

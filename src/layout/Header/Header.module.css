@@ -9,6 +9,7 @@
 }
 
 
+
 .li {
     display: block;
     min-width: 150px;
@@ -21,9 +22,15 @@
 
 
 .li:first-child {
-    padding-right: 150px;
-    min-width: 311px;
-    pointer-events: none;
+    padding-left: 25px;
+    min-width: 300px;
+    border-right: 1px solid #1E2D3D;
+    font-size: 16px;
+    font-weight: 450;
+    line-height: 57.8px;
+    color: #607B96;
+    align-self: center;
+    text-align: left;
 }
 
 
@@ -31,4 +38,9 @@
     margin-left: auto;
     border-right: none;
     border-left: 1px solid #1E2D3D;
+}
+
+.textName {
+    padding-left: 20px;
+
 }
