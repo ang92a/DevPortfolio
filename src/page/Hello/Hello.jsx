@@ -2,7 +2,7 @@ import s from "./Hello.module.css";
 
 export const Hello = () => {
   return (
-    <div className={s.container}>
+    <div className={s.containerHello}>
       <div className={s.visitCard}>
         <div className={s.title}>
           <p className={s.textHi}>Hi all. I am</p>

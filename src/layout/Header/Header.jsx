@@ -2,8 +2,6 @@ import React from "react";
 import s from "./Header.module.css";
 import { HeaderLink } from "../../ui/HeaderLink/HeaderLink";
 
-
-
 export const Header = () => {
   return (
     <header className={s.header}>

@@ -24,8 +24,3 @@ function App() {
 
 export default App;
 
-// <Hello />
-// <About />
-// <Portfolio />
-// <Contact />
-// <NotFound />

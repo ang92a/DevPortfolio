@@ -1,0 +1,18 @@
+.Icon {
+    width: 20px;
+    height: 20px;
+    translate: 0.3s;
+}
+
+
+.Icon:hover {
+    transform: scale(1.2);
+    translate: 0.3s;
+}
+
+.link__footer {
+    display: block;
+    margin-right: 10px;
+    color: #607b96;
+    ;
+}
