@@ -1,6 +1,6 @@
-import s from "./About.module.css"
+import s from "./About.module.css";
 import { Scrollbar } from "../../ui/Scrollbar/Scrollbar";
-
+import { Highlighter } from "rc-highlight";
 
 export const About = () => {
   return (
@@ -16,15 +16,7 @@ export const About = () => {
         </div>
         <div className={s.rightAside}>
           <div className={s.contentShowCase}>
-            <pre>
-              <code>function initializeModelChunk<T>(chunk: ResolvedModelChunk): T {
-  const value: T = parseModel(chunk._response, chunk._value);
-  const initializedChunk: InitializedChunk<T> = (chunk: any);
-  initializedChunk._status = INITIALIZED;
-  initializedChunk._value = value;
-  return value;
-}</code>
-            </pre>
+            <Highlighter>{makeCode}</Highlighter>
           </div>
           <Scrollbar />
         </div>
@@ -32,3 +24,12 @@ export const About = () => {
     </>
   );
 };
+
+const makeCode = `function initializeModelChunk<T>(chunk: ResolvedModelChunk): T {
+  const value: T = parseModel(chunk._response, chunk._value);
+  const initializedChunk: InitializedChunk<T> = (chunk: any);
+  initializedChunk._status = INITIALIZED;
+  initializedChunk._value = value;
+  return value;
+}
+`;
