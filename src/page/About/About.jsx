@@ -35,9 +35,7 @@ export const About = () => {
           <MenuAccordion title="contacts" content={content2} symbol={symbol2} />
         </div>
         <div className={s.contentAboutMe}>
-          <div className={s.contentAboutMe}>
-            <div className={s.contentAboutMe__title}></div>
-          </div>
+          <ContentAboutMe />
           <Scrollbar />
         </div>
         <div className={s.rightAside}>

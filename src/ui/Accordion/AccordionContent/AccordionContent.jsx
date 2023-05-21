@@ -1,10 +1,14 @@
 import s from "./AccordionContent.module.css";
 
-export const AccordionContent = ({ content, symbol }) => {
+export const AccordionContent = ({ arr }) => {
   return (
-    <li>
-      <img src={symbol} alt="symbol" />
-      {content}
-    </li>
+    <>
+      {arr.map((el) => (
+        <li>
+          <img src={el.src} alt={el.text} />
+          {el.text}
+        </li>
+      ))}
+    </>
   );
 };

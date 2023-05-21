@@ -1,21 +1,27 @@
-import React from "react";
+import { useState } from "react";
 import s from "./MenuAccordion.module.css";
-import { AccordionTitle } from "../AccordionTitle/AccordionTitle";
-import { AccordionBody } from "../AccordionBody/AccordionBody"
+import { AccordionBody } from "../AccordionBody/AccordionBody";
 
 export const MenuAccordion = ({ title, content, symbol }) => {
+  const [isActive, setIsActive] = useState(false);
+
   return (
     <div className={s.accordion__item}>
       <div className={s.accordion__header}>
         <div className={s.accordion__title}>
-          <AccordionTitle title={title} />
+          <span>
+            {isActive ? <span>&#x25bc;</span> : <span>&#x25ba;</span>}
+          </span>
+          <span onClick={() => setIsActive(!isActive)}>{title}</span>
         </div>
       </div>
-      <div className={s.accordion__body}>
-        <ul>
-          <AccordionBody content={content} symbol={symbol} />
-        </ul>
-      </div>
+      {isActive && (
+        <div className={s.accordion__body}>
+          <ul>
+            <AccordionBody content={content} symbol={symbol} />
+          </ul>
+        </div>
+      )}
     </div>
   );
 };
