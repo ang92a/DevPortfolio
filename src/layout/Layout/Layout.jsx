@@ -4,9 +4,9 @@ import { Footer } from "../Footer/Footer";
 
 export const Layout = ({ children }) => {
   return (
-    <div className={s.wrapper}>
+    <div className={s.GlobalWrapper}>
       <Header />
-      <main className={s.main}>{children}</main>
+      <main>{children}</main>
       <Footer />
     </div>
   );

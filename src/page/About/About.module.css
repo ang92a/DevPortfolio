@@ -1,0 +1,15 @@
+.pageWrapper {
+    height: inherit;
+}
+
+.containerAbout {
+    display: flex;
+    flex-direction: row;
+    height: inherit;
+}
+
+.sidebar {
+    width: 68px;
+    border-right: 1px solid #1E2D3D;
+
+}

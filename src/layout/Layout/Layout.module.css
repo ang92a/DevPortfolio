@@ -1,13 +1,19 @@
-.wrapper {
+.GlobalWrapper {
+    max-width: 1780px;
+    min-width: 80vw;
+    max-height: 940px;
+    min-height: 80vh;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #1E2D3D;
+    border-radius: 8px;
     background: #011627;
     display: flex;
-    min-height: 90vh;
-    min-width: 90vw;
     flex-direction: column;
-    border-radius: 8px;
-    border: 1px solid #1E2D3D;
+    justify-content: space-between;
 }
 
-.main {
-    flex: 1 0 auto;
+main {
+    width: 100%;
+    height: 100%;
 }

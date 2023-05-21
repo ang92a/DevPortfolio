@@ -1,0 +1,12 @@
+.accordion__title {
+    color: #fff;
+}
+
+.accordion__title {
+    margin-bottom: 30px;
+}
+
+.accordion__symbol {
+    transform: rotate(-90deg);
+    margin-right: 10px;
+}

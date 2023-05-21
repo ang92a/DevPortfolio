@@ -1,3 +1,4 @@
+import s from "./Global.module.css"
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./layout/Layout/Layout";
 import { Hello } from "./page/Hello/Hello";
