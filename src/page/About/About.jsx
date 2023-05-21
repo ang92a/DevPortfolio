@@ -5,6 +5,8 @@ import { MenuAccordion } from "../../ui/Accordion/MenuAccordion/MenuAccordion";
 import red from "../../ui/Accordion/assets/iconRed.svg";
 import green from "../../ui/Accordion/assets/iconGreen.svg";
 import blue from "../../ui/Accordion/assets/iconBlue.svg";
+import mail from "../../ui/Accordion/assets/mail-icon.svg";
+import phone from "../../ui/Accordion/assets/phone-icon.svg";
 
 const makeCode = `function initializeModelChunk<T>(chunk: ResolvedModelChunk): T {
   const value: T = parseModel(chunk._response, chunk._value);
@@ -18,7 +20,8 @@ const makeCode = `function initializeModelChunk<T>(chunk: ResolvedModelChunk): T
 export const About = () => {
   const content = ["bio", "interests", "education"];
   const symbol = [red, green, blue];
-  console.log(red);
+  const content2 = ["user@gmail.com", "+9999999999"];
+  const symbol2 = [mail, phone];
   return (
     <>
       <div className={s.containerAbout}>
@@ -29,7 +32,7 @@ export const About = () => {
             content={content}
             symbol={symbol}
           />
-          <MenuAccordion title="contacts" />
+          <MenuAccordion title="contacts" content={content2} symbol={symbol2} />
         </div>
         <div className={s.contentAboutMe}>
           <div className={s.contentAboutMe}>
