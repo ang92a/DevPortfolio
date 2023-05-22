@@ -1,12 +1,14 @@
+import { useState, useRef, useEffect } from "react";
 import s from "./About.module.css";
 import { Scrollbar } from "../../ui/Scrollbar/Scrollbar";
 import { Highlighter } from "rc-highlight";
-import { MenuAccordion } from "../../ui/Accordion/MenuAccordion/MenuAccordion";
-import red from "../../ui/Accordion/assets/iconRed.svg";
-import green from "../../ui/Accordion/assets/iconGreen.svg";
-import blue from "../../ui/Accordion/assets/iconBlue.svg";
-import mail from "../../ui/Accordion/assets/mail-icon.svg";
-import phone from "../../ui/Accordion/assets/phone-icon.svg";
+import { MenuAccordion } from "../../components/Accordion/MenuAccordion/MenuAccordion";
+import red from "../../components/Accordion/assets/iconRed.svg";
+import green from "../../components/Accordion/assets/iconGreen.svg";
+import blue from "../../components/Accordion/assets/iconBlue.svg";
+import mail from "../../components/Accordion/assets/mail-icon.svg";
+import phone from "../../components/Accordion/assets/phone-icon.svg";
+import { ContentAboutMe } from "../../components/ContentAboutMe/ContentAboutMe";
 
 const makeCode = `function initializeModelChunk<T>(chunk: ResolvedModelChunk): T {
   const value: T = parseModel(chunk._response, chunk._value);
@@ -17,11 +19,30 @@ const makeCode = `function initializeModelChunk<T>(chunk: ResolvedModelChunk): T
 }
 `;
 
+const content = ["bio", "interests", "education"];
+const symbol = [red, green, blue];
+const content2 = ["user@gmail.com", "+9999999999"];
+const symbol2 = [mail, phone];
+
 export const About = () => {
-  const content = ["bio", "interests", "education"];
-  const symbol = [red, green, blue];
-  const content2 = ["user@gmail.com", "+9999999999"];
-  const symbol2 = [mail, phone];
+  const [size, setSize] = useState({});
+  const ref = useRef();
+
+  const resizeHandler = () => {
+    const { clientHeight, clientWidth } = ref.current || {};
+    setSize({ clientHeight, clientWidth });
+  };
+
+  useEffect(() => {
+    window.addEventListener("resize", resizeHandler);
+    resizeHandler();
+    return () => {
+      window.removeEventListener("resize", resizeHandler);
+    };
+  }, []);
+
+  const currentWidth = size.clientWidth;
+  console.log(currentWidth);
   return (
     <>
       <div className={s.containerAbout}>
@@ -34,8 +55,13 @@ export const About = () => {
           />
           <MenuAccordion title="contacts" content={content2} symbol={symbol2} />
         </div>
-        <div className={s.contentAboutMe}>
-          <ContentAboutMe />
+        <div className={s.contentAboutMe} ref={ref}>
+          {currentWidth > 500 ? (
+            <ContentAboutMe large="large" />
+          ) : (
+            <ContentAboutMe small="small" />
+          )}
+
           <Scrollbar />
         </div>
         <div className={s.rightAside}>
@@ -48,3 +74,31 @@ export const About = () => {
     </>
   );
 };
+
+// const elementRef = useRef();
+
+// useEffect(
+//   () => {
+//     const divElement = elementRef.current.clientWidth;
+//     console.log(divElement);
+//   },
+//   { elementRef }
+// );
+
+// **************
+
+// const [width, setWidth] = useState(window.innerWidth);
+
+// useEffect(() => {
+//   const handleResize = (event) => {
+//     setWidth(event.target.innerWidth);
+//   };
+//   window.addEventListener("resize", handleResize);
+//   return () => {
+//     window.removeEventListener("resize", handleResize);
+//   };
+// }, []);
+
+// const ref = useRef(width);
+// const calc = ref.current.clientWidth;
+// console.log(calc);

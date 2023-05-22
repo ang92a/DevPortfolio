@@ -1,6 +1,7 @@
 import { useState } from "react";
 import s from "./MenuAccordion.module.css";
 import { AccordionBody } from "../AccordionBody/AccordionBody";
+import { AccordionTitle } from "../AccordionTitle/AccordionTitle";
 
 export const MenuAccordion = ({ title, content, symbol }) => {
   const [isActive, setIsActive] = useState(false);
@@ -9,10 +10,11 @@ export const MenuAccordion = ({ title, content, symbol }) => {
     <div className={s.accordion__item}>
       <div className={s.accordion__header}>
         <div className={s.accordion__title}>
-          <span>
-            {isActive ? <span>&#x25bc;</span> : <span>&#x25ba;</span>}
-          </span>
-          <span onClick={() => setIsActive(!isActive)}>{title}</span>
+          <AccordionTitle
+            isActive={isActive}
+            setIsActive={setIsActive}
+            title={title}
+          />
         </div>
       </div>
       {isActive && (

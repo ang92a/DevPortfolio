@@ -9,7 +9,17 @@
 }
 
 .sidebar {
-    width: 68px;
+    min-width: 68px;
     border-right: 1px solid #1E2D3D;
+}
 
+.leftAside {
+    min-width: 232px;
+    border-right: 1px solid #1E2D3D;
+    
+}
+
+.contentAboutMe {
+    min-width: 500px;
+    width: calc((100% - 68px - 250px)/2);
 }

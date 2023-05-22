@@ -1,0 +1,15 @@
+.listContentAboutMe {
+    padding: 15px;
+}
+
+.item {
+    list-style-position: inside;
+}
+
+.fontSize__large {
+    font-size: 20px;
+}
+
+.fontSize__small {
+    font-size: 18px;
+}
