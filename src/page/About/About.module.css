@@ -22,4 +22,5 @@
 .contentAboutMe {
     min-width: 500px;
     width: calc((100% - 68px - 250px)/2);
+    display: flex;
 }

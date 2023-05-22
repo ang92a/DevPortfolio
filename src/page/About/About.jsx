@@ -24,6 +24,14 @@ const symbol = [red, green, blue];
 const content2 = ["user@gmail.com", "+9999999999"];
 const symbol2 = [mail, phone];
 
+function numeric(number) {
+  let arr = [];
+  for (let i = 1; i <= number / 27; i++) {
+    arr.push(i);
+  }
+  return arr;
+}
+
 export const About = () => {
   const [size, setSize] = useState({});
   const ref = useRef();
@@ -41,8 +49,9 @@ export const About = () => {
     };
   }, []);
 
-  const currentWidth = size.clientWidth;
-  console.log(currentWidth);
+  const arr = numeric(size.clientHeight);
+
+  console.log(size.clientHeight);
   return (
     <>
       <div className={s.containerAbout}>
@@ -56,12 +65,7 @@ export const About = () => {
           <MenuAccordion title="contacts" content={content2} symbol={symbol2} />
         </div>
         <div className={s.contentAboutMe} ref={ref}>
-          {currentWidth > 500 ? (
-            <ContentAboutMe large="large" />
-          ) : (
-            <ContentAboutMe small="small" />
-          )}
-
+          <ContentAboutMe arr={arr} />
           <Scrollbar />
         </div>
         <div className={s.rightAside}>

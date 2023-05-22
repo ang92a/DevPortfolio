@@ -2,31 +2,25 @@ import React from "react";
 import clsx from "clsx";
 import s from "./ContentAboutMe.module.css";
 
-export const ContentAboutMe = (props) => {
-  const { large, small } = props;
-
-  const innerClassName = clsx(s.item, {
-    [s.fontSize__large]: large,
-    [s.fontSize__small]: small,
-  });
-
+export const ContentAboutMe = ({ arr }) => {
   return (
-    <ol className={s.listContentAboutMe}>
-      <li className={innerClassName}>/**</li>
-      <li className={innerClassName}>* About me</li>
-      <li className={innerClassName}>* I have 5 years of еxperience in web</li>
-      <li className={innerClassName}>* development lorem ipsum dolor sit amet,</li>
-      <li className={innerClassName}>* consectetur adipiscing elit, sed do eiusmod</li>
-      <li className={innerClassName}>
-        * tempor incididunt ut labore et dolore veniam,
-      </li>
-      <li className={innerClassName}>* quis nostrud exercitation ullamco laboris</li>
-      <li className={innerClassName}>* nisi ut aliquip ex ea commodo consequat.</li>
-      <li className={innerClassName}>* Duis aute irure dolor in reprehenderit in </li>
-      <li className={innerClassName}>* voluptate velit esse cillum dolore eu fugiat</li>
-      <li className={innerClassName}>* nulla pariatur. Excepteur sint occaecat</li>
-      <li className={innerClassName}>* officia deserunt mollit anim id est laborum.</li>
-      <li className={innerClassName}>*/</li>
-    </ol>
+    <>
+      <ul>
+       {arr.map((el) => <li>{el}</li>)} 
+      </ul>
+      <div>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam,
+        distinctio repudiandae hic ad quasi aliquam repellat eaque tempora
+        consequuntur nam ipsam vel quod magnam explicabo necessitatibus! Maiores
+        magnam, itaque aspernatur quaerat voluptatem earum? Officia, repellat
+        laboriosam. Nostrum, sequi. Perferendis libero odit in ipsum illo eaque
+        ducimus recusandae. Quo tempora non at dolor, quia, cupiditate ad libero
+        quae itaque tenetur omnis? Labore at harum pariatur magni mollitia
+        voluptatem est provident repudiandae voluptatibus reiciendis asperiores
+        voluptate sapiente, eius molestias in doloremque perferendis ut saepe
+        officiis cum laudantium delectus sunt. Eaque fugit dolores, libero porro
+        suscipit, odit blanditiis odio corporis sint at ad?
+      </div>
+    </>
   );
 };
