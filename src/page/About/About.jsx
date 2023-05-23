@@ -54,26 +54,24 @@ export const About = () => {
   console.log(size.clientHeight);
   return (
     <>
-      <div className={s.containerAbout}>
-        <div className={s.sidebar}></div>
-        <div className={s.leftAside}>
-          <MenuAccordion
-            title="personal-info"
-            content={content}
-            symbol={symbol}
-          />
-          <MenuAccordion title="contacts" content={content2} symbol={symbol2} />
+      <div className={s.sidebar}></div>
+      <div className={s.leftAside}>
+        <MenuAccordion
+          title="personal-info"
+          content={content}
+          symbol={symbol}
+        />
+        <MenuAccordion title="contacts" content={content2} symbol={symbol2} />
+      </div>
+      <div className={s.contentAboutMe} ref={ref}>
+        <ContentAboutMe arr={arr} />
+        <Scrollbar />
+      </div>
+      <div className={s.rightAside}>
+        <div className={s.contentShowCase}>
+          <Highlighter>{makeCode}</Highlighter>
         </div>
-        <div className={s.contentAboutMe} ref={ref}>
-          <ContentAboutMe arr={arr} />
-          <Scrollbar />
-        </div>
-        <div className={s.rightAside}>
-          <div className={s.contentShowCase}>
-            <Highlighter>{makeCode}</Highlighter>
-          </div>
-          <Scrollbar />
-        </div>
+        <Scrollbar />
       </div>
     </>
   );
