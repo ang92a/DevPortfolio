@@ -1,11 +1,12 @@
 .header__menu {
     display: flex;
-    border-bottom: 1px solid #1E2D3D;
+
     background: transparent;
 }
 
 .header {
     flex: 0 0 auto;
+    border-bottom: 1px solid #1E2D3D;
 }
 
 

@@ -3,29 +3,41 @@ import s from "./About.module.css";
 import { Scrollbar } from "../../ui/Scrollbar/Scrollbar";
 import { Code } from "../../components/Code/Code";
 import { MenuAccordion } from "../../components/Accordion/MenuAccordion/MenuAccordion";
-// import red from "../../components/Accordion/assets/iconRed.svg";
-// import green from "../../components/Accordion/assets/iconGreen.svg";
-// import blue from "../../components/Accordion/assets/iconBlue.svg";
-// import mail from "../../components/Accordion/assets/mail-icon.svg";
-// import phone from "../../components/Accordion/assets/phone-icon.svg";
 import { ContentAboutMe } from "../../components/ContentAboutMe/ContentAboutMe";
-import icon from "./assets/professional-info-icon.svg";
+import iconbio from "./assets/bioIcon.svg";
+import iconEd from "./assets/edIcon.svg";
+import iconInt from "./assets/intIcon.svg";
 
 export const About = () => {
   const [contentAbout, setcontentAbout] = useState("bio");
+  const [isIconBio, setisIconBio] = useState(iconbio);
 
   return (
     <>
       <div className={s.leftAside}>
         <div className={s.leftAsideItem}>
-          <img src={icon} alt="icon" className={s.Icon} />
-          <img src={icon} alt="icon" className={s.Icon} />
-          <img src={icon} alt="icon" className={s.Icon} />
+          <img
+            src={iconbio}
+            alt="icon"
+            className={`${isIconBio ? s.iconAtive : null}`}
+          />
+          <img
+            src={iconEd}
+            alt="icon"
+            className={`${isIconBio ? s.iconAtive : null}`}
+          />
+          <img
+            src={iconInt}
+            alt="icon"
+            className={`${isIconBio ? s.iconAtive : null}`}
+          />
         </div>
         <div className={s.menuAccordion}>
           <MenuAccordion
             title="personal-info"
             setcontentAbout={setcontentAbout}
+            setisIconBio={setisIconBio}
+            isIconBio={isIconBio}
           />
         </div>
       </div>
