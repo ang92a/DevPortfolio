@@ -7,8 +7,7 @@
 }
 
 .Icon__twitter:hover,
-.Icon__facebook:hover,
-.Icon__git:hover {
-    transform: scale(1.2);
+.Icon__facebook:hover {
+    filter: brightness(10);
     translate: 0.3s;
 }

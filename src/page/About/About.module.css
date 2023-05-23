@@ -1,16 +1,37 @@
-.sidebar {
-    min-width: 68px;
+.leftAside {
+    min-width: 300px;
     border-right: 1px solid #1E2D3D;
+    display: flex;
+    flex-direction: row;
+
 }
 
-.leftAside {
-    min-width: 232px;
+.leftAsideItem {
+    min-width: 68px;
     border-right: 1px solid #1E2D3D;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    align-items: center;
+}
 
+
+.icon {
+    width: 20px;
+    height: 20px;
+}
+
+.menuAccordion {
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    align-items: flex-start;
 }
 
 .contentAboutMe {
     min-width: 500px;
-    width: calc((100% - 68px - 250px)/2);
+
     display: flex;
 }
+
+.rightAside {}

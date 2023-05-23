@@ -9,6 +9,7 @@ import blue from "../../components/Accordion/assets/iconBlue.svg";
 import mail from "../../components/Accordion/assets/mail-icon.svg";
 import phone from "../../components/Accordion/assets/phone-icon.svg";
 import { ContentAboutMe } from "../../components/ContentAboutMe/ContentAboutMe";
+import icon from "./assets/professional-info-icon.svg";
 
 const makeCode = `function initializeModelChunk<T>(chunk: ResolvedModelChunk): T {
   const value: T = parseModel(chunk._response, chunk._value);
@@ -54,14 +55,27 @@ export const About = () => {
   console.log(size.clientHeight);
   return (
     <>
-      <div className={s.sidebar}></div>
+      {" "}
       <div className={s.leftAside}>
-        <MenuAccordion
-          title="personal-info"
-          content={content}
-          symbol={symbol}
-        />
-        <MenuAccordion title="contacts" content={content2} symbol={symbol2} />
+        <div className={s.leftAsideItem}>
+          <i>
+            <img src={icon} alt="icon" className={s.Icon} />
+          </i>
+          <i>
+            <img src={icon} alt="icon" />
+          </i>
+          <i>
+            <img src={icon} alt="icon" />
+          </i>
+        </div>
+        <div className={s.menuAccordion}>
+          <MenuAccordion
+            title="personal-info"
+            content={content}
+            symbol={symbol}
+          />
+          <MenuAccordion title="contacts" content={content2} symbol={symbol2} />
+        </div>
       </div>
       <div className={s.contentAboutMe} ref={ref}>
         <ContentAboutMe arr={arr} />

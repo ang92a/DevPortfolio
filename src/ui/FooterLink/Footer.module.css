@@ -2,11 +2,12 @@
     width: 20px;
     height: 20px;
     translate: 0.3s;
+    margin-left: 5px;
 }
 
 
 .Icon:hover {
-    transform: scale(1.2);
+    filter: brightness(10);
     translate: 0.3s;
 }
 
@@ -14,5 +15,4 @@
     display: block;
     margin-right: 10px;
     color: #607b96;
-    ;
 }
