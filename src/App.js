@@ -1,4 +1,4 @@
-import s from "./Global.module.css"
+import s from "./Global.module.css";
 import { Routes, Route } from "react-router-dom";
 import { Layout } from "./layout/Layout/Layout";
 import { Hello } from "./page/Hello/Hello";
@@ -10,7 +10,8 @@ import { NotFound } from "./page/NotFound";
 function App() {
   return (
     <>
-      <Layout>
+      <div className={s.body}>
+        <Layout>
           <Routes>
             <Route path="/" element={<Hello />} />
             <Route path="/about" element={<About />} />
@@ -18,10 +19,10 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/notFound" element={<NotFound />} />
           </Routes>
-      </Layout>
+        </Layout>
+      </div>
     </>
   );
 }
 
 export default App;
-
