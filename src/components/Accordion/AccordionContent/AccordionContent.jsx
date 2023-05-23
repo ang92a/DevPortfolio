@@ -1,12 +1,13 @@
 import s from "./AccordionContent.module.css";
 
-export const AccordionContent = ({ file }) => {
+
+
+export const AccordionContent = ({ props, setcontentAbout }) => {
+
   return (
     <>
-      {file.map((el) => (
-        <li>
-          {el}
-        </li>
+      {props.map((el) => (
+        <li onClick={() => setcontentAbout(el.content)}>{el.title}</li>
       ))}
     </>
   );
