@@ -20,10 +20,7 @@ const makeCode = `function initializeModelChunk<T>(chunk: ResolvedModelChunk): T
 }
 `;
 
-const content = ["bio", "interests", "education"];
-const symbol = [red, green, blue];
-const content2 = ["user@gmail.com", "+9999999999"];
-const symbol2 = [mail, phone];
+
 
 function numeric(number) {
   let arr = [];
@@ -69,12 +66,7 @@ export const About = () => {
           </i>
         </div>
         <div className={s.menuAccordion}>
-          <MenuAccordion
-            title="personal-info"
-            content={content}
-            symbol={symbol}
-          />
-          <MenuAccordion title="contacts" content={content2} symbol={symbol2} />
+          <MenuAccordion title="personal-info" />
         </div>
       </div>
       <div className={s.contentAboutMe} ref={ref}>
