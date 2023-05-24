@@ -4,14 +4,14 @@ import { MenuAccordionContacts } from "../../components/Accordion/MenuAccordionC
 import s from "./Contact.module.css";
 import close from "./assets/close.svg";
 import { ContactRightAside } from "../../components/ContactRightAside/ContactRightAside";
-import { ContentForm } from "../../components/ContentForm/ContentForm";
+import { ContentFormMess } from "../../components/ContentFormMess/ContentFormMess";
 
 export const Contact = () => {
   const [inputName, setInputName] = useState("");
   const [inputEmail, setInputEmail] = useState("");
   const [inputMessage, setInputMessage] = useState("");
 
-  const [contForm, setContForm] = useState("");
+  const [renderForm, setRenderForm] = useState(false);
 
   return (
     <>
@@ -26,14 +26,20 @@ export const Contact = () => {
           <img src={close} alt="close" className={s.iconClose} />
         </div>
         <div className={s.conteinerForm}>
-          <Form
-            inputName={inputName}
-            setInputName={setInputName}
-            inputEmail={inputEmail}
-            setInputEmail={setInputEmail}
-            inputMessage={inputMessage}
-            setInputMessage={setInputMessage}
-          />
+          {!renderForm ? (
+            <Form
+              inputName={inputName}
+              setInputName={setInputName}
+              inputEmail={inputEmail}
+              setInputEmail={setInputEmail}
+              inputMessage={inputMessage}
+              setInputMessage={setInputMessage}
+              setRenderForm={setRenderForm}
+              renderForm={renderForm}
+            />
+          ) : (
+            <ContentFormMess />
+          )}
         </div>
       </div>
       <div className={s.rightAside}>

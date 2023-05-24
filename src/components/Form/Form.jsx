@@ -1,6 +1,5 @@
 import s from "./Form.module.css";
 import { Button } from "../../ui/Button/Button";
-import { ContentFormMess } from "../ContentFormMess/ContentFormMess";
 
 export const Form = (props) => {
   const {
@@ -10,6 +9,7 @@ export const Form = (props) => {
     setInputEmail,
     inputMessage,
     setInputMessage,
+    setRenderForm,
   } = props;
 
   return (
@@ -57,11 +57,7 @@ export const Form = (props) => {
         value={inputMessage}
         onChange={(evt) => setInputMessage(evt.target.value)}
       ></textarea>
-      <Button
-        title="submit-message"
-       
-        submitMessage
-      />
+      <Button title="submit-message" handler={setRenderForm} submitMessage />
     </form>
   );
 };

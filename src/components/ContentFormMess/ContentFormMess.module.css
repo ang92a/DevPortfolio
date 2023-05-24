@@ -1,0 +1,12 @@
+.messThanks{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+}
+
+.messThanks >p {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align: center;
+}
