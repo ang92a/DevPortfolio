@@ -38,7 +38,10 @@ export const Contact = () => {
               renderForm={renderForm}
             />
           ) : (
-            <ContentFormMess />
+            <ContentFormMess
+              setRenderForm={setRenderForm}
+              renderForm={renderForm}
+            />
           )}
         </div>
       </div>

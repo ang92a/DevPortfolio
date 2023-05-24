@@ -10,6 +10,7 @@ export const Form = (props) => {
     inputMessage,
     setInputMessage,
     setRenderForm,
+    renderForm,
   } = props;
 
   return (
@@ -57,7 +58,12 @@ export const Form = (props) => {
         value={inputMessage}
         onChange={(evt) => setInputMessage(evt.target.value)}
       ></textarea>
-      <Button title="submit-message" handler={setRenderForm} submitMessage />
+      <Button
+        title="submit-message"
+        handler={setRenderForm}
+        renderForm={renderForm}
+        submitMessage
+      />
     </form>
   );
 };
