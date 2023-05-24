@@ -6,7 +6,6 @@ import blue from "../assets/iconBlue.svg";
 import { Bio } from "../../Bio/Bio";
 import { School } from "../../School/School";
 
-
 const univers = "еще какой то текст";
 const game = "опять какой то текст";
 
@@ -15,6 +14,13 @@ export const MenuAccordionAbout = ({ title, setcontentAbout }) => {
 
   const [isActiveEd, setIsActiveEd] = useState(false);
   const [isActiveInt, setIsActiveInt] = useState(false);
+  const [active, setActive] = useState("bio");
+
+  let arr = [
+    "bio",
+    ["education", ["school", "univers"]],
+    ["interests", ["game"]],
+  ];
 
   return (
     <div className={s.accordion__item}>
@@ -25,27 +31,61 @@ export const MenuAccordionAbout = ({ title, setcontentAbout }) => {
       {/* блок с меню bio */}
       <div
         className={s.accordion__subtitle}
-        onClick={() => setcontentAbout(<Bio />)}
+        onClick={(e) => {
+          setcontentAbout(<Bio />);
+          setActive("bio");
+        }}
       >
         <span>&#x25bc;</span>
         <img src={red} alt="icon" />
-        <span>bio</span>
+        <span className={active === arr[0] ? s.active : s.accordion__item}>
+          {arr[0]}
+        </span>
       </div>
 
       {/* блок с меню education */}
 
       <div
         className={s.accordion__subtitle}
-        onClick={() => setIsActiveEd(!isActiveEd)}
+        onClick={() => {
+          setIsActiveEd(!isActiveEd);
+          setActive("education");
+        }}
       >
         {isActiveEd ? <span>&#x25bc;</span> : <span>&#x25ba;</span>}
         <img src={green} alt="icon" />
-        <span>education</span>
+        <span
+          className={
+            active === arr[1][0] ||
+            active === arr[1][1][0] ||
+            active === arr[1][1][1]
+              ? s.active
+              : null
+          }
+        >
+          {arr[1][0]}
+        </span>
       </div>
       {isActiveEd && (
         <ul className={s.accordion__list}>
-          <li onClick={() => setcontentAbout(<School />)}>school</li>
-          <li onClick={() => setcontentAbout(univers)}>univers</li>
+          <li
+            className={active === arr[1][1][0] ? s.active : null}
+            onClick={() => {
+              setcontentAbout(<School />);
+              setActive("school");
+            }}
+          >
+            {arr[1][1][0]}
+          </li>
+          <li
+            className={active === arr[1][1][1] ? s.active : null}
+            onClick={() => {
+              setcontentAbout(univers);
+              setActive("univers");
+            }}
+          >
+            {arr[1][1][1]}
+          </li>
         </ul>
       )}
 
@@ -53,15 +93,32 @@ export const MenuAccordionAbout = ({ title, setcontentAbout }) => {
 
       <div
         className={s.accordion__subtitle}
-        onClick={() => setIsActiveInt(!isActiveInt)}
+        onClick={() => {
+          setIsActiveInt(!isActiveInt);
+          setActive("interests");
+        }}
       >
         {isActiveInt ? <span>&#x25bc;</span> : <span>&#x25ba;</span>}
         <img src={blue} alt="icon" />
-        <span>interests</span>
+        <span
+          className={
+            active == arr[2][0] || active == arr[2][1] ? s.active : null
+          }
+        >
+          {arr[2][0]}
+        </span>
       </div>
       {isActiveInt && (
         <ul className={s.accordion__list}>
-          <li onClick={() => setcontentAbout(game)}>game</li>
+          <li
+            className={active == arr[2][1] ? s.active : null}
+            onClick={() => {
+              setcontentAbout(game);
+              setActive("game");
+            }}
+          >
+            {arr[2][1]}
+          </li>
         </ul>
       )}
     </div>

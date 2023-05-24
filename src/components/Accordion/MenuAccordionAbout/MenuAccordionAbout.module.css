@@ -32,3 +32,7 @@
     margin-bottom: 8px;
     margin-left: 32px;
 }
+
+.active{
+    color: #fff;
+}
