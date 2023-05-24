@@ -1,0 +1,13 @@
+.button__submitMessage {
+    background: #1C2B3A;
+    height: 38px;
+    width: 146px;
+    border-radius: 8px;
+    padding: 10px 14px 10px 14px;
+    font-size: 14px;
+    font-weight: 450;
+    line-height: 18px;
+    text-align: center;
+     color: #FFFFFF;
+     border: none;
+}

@@ -1,0 +1,33 @@
+.leftAside {
+    min-width: 300px;
+    border-right: 1px solid #1E2D3D;
+}
+
+.titleContentContacts {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #1E2D3D;
+}
+
+.contenContacts {
+    max-width: 650px;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.rightAside {
+    display: flex;
+    box-sizing: content-box;
+    padding: 15px;
+    border-left: 1px solid #1E2D3D;
+}
+
+.conteinerForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}

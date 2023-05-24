@@ -2,7 +2,7 @@ import { useState } from "react";
 import s from "./About.module.css";
 import { Scrollbar } from "../../ui/Scrollbar/Scrollbar";
 import { Code } from "../../components/Code/Code";
-import { MenuAccordion } from "../../components/Accordion/MenuAccordion/MenuAccordion";
+import { MenuAccordionAbout } from "../../components/Accordion/MenuAccordionAbout/MenuAccordionAbout";
 import { ContentAboutMe } from "../../components/ContentAboutMe/ContentAboutMe";
 import iconbio from "./assets/bioIcon.svg";
 import iconEd from "./assets/edIcon.svg";
@@ -22,7 +22,7 @@ export const About = () => {
           <img src={iconInt} alt="icon" className={s.AsideItem} />
         </div>
         <div className={s.menuAccordion}>
-          <MenuAccordion
+          <MenuAccordionAbout
             title="personal-info"
             setcontentAbout={setcontentAbout}
           />

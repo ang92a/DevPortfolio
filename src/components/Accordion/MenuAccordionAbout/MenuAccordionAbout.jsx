@@ -1,16 +1,16 @@
 import { useState } from "react";
-import s from "./MenuAccordion.module.css";
+import s from "./MenuAccordionAbout.module.css";
 import red from "../assets/iconRed.svg";
 import green from "../assets/iconGreen.svg";
 import blue from "../assets/iconBlue.svg";
 import { Bio } from "../../Bio/Bio";
 import { School } from "../../School/School";
 
-const school = "какой то текс";
-const univers = "еще какой то текс";
-const game = "игра";
 
-export const MenuAccordion = ({ title, setcontentAbout }) => {
+const univers = "еще какой то текст";
+const game = "опять какой то текст";
+
+export const MenuAccordionAbout = ({ title, setcontentAbout }) => {
   // выпадающее меню
 
   const [isActiveEd, setIsActiveEd] = useState(false);

@@ -1,19 +1,23 @@
 import { useState } from "react";
 import { Form } from "../../components/Form/Form";
+import { MenuAccordionContacts } from "../../components/Accordion/MenuAccordionContacts/MenuAccordionContacts";
 import s from "./Contact.module.css";
 import close from "./assets/close.svg";
-import { MenuAccordion } from "../../components/Accordion/MenuAccordion/MenuAccordion";
+import { ContactRightAside } from "../../components/ContactRightAside/ContactRightAside";
+import { ContentForm } from "../../components/ContentForm/ContentForm";
 
 export const Contact = () => {
-  const [contentContacts, setcontentContacts] = useState(false);
+  const [inputName, setInputName] = useState("");
+  const [inputEmail, setInputEmail] = useState("");
+  const [inputMessage, setInputMessage] = useState("");
+
+  const [contForm, setContForm] = useState("");
+
   return (
     <>
       <div className={s.leftAside}>
         <div className={s.menuAccordion}>
-          <MenuAccordion
-            title="personal-info"
-            setcontentContacts={setcontentContacts}
-          />
+          <MenuAccordionContacts title="contacts" />
         </div>
       </div>
       <div className={s.contenContacts}>
@@ -21,9 +25,24 @@ export const Contact = () => {
           <span>contacts</span>
           <img src={close} alt="close" className={s.iconClose} />
         </div>
-        <Form />
+        <div className={s.conteinerForm}>
+          <Form
+            inputName={inputName}
+            setInputName={setInputName}
+            inputEmail={inputEmail}
+            setInputEmail={setInputEmail}
+            inputMessage={inputMessage}
+            setInputMessage={setInputMessage}
+          />
+        </div>
       </div>
-      <div className={s.rightAside}></div>
+      <div className={s.rightAside}>
+        <ContactRightAside
+          inputName={inputName}
+          inputEmail={inputEmail}
+          inputMessage={inputMessage}
+        />
+      </div>
     </>
   );
 };
