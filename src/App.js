@@ -4,7 +4,7 @@ import { Layout } from "./layout/Layout/Layout";
 import { Hello } from "./page/Hello/Hello";
 import { About } from "./page/About/About";
 import { Portfolio } from "./page/Portfolio";
-import { Contact } from "./page/Contact";
+import { Contact } from "./page/Contact/Contact";
 import { NotFound } from "./page/NotFound";
 
 function App() {

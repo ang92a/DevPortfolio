@@ -7,41 +7,32 @@ import { ContentAboutMe } from "../../components/ContentAboutMe/ContentAboutMe";
 import iconbio from "./assets/bioIcon.svg";
 import iconEd from "./assets/edIcon.svg";
 import iconInt from "./assets/intIcon.svg";
+import { Bio } from "../../components/Bio/Bio";
+import close from "../../components/Code/assets/close.svg";
 
 export const About = () => {
-  const [contentAbout, setcontentAbout] = useState("bio");
-  const [isIconBio, setisIconBio] = useState(iconbio);
+  const [contentAbout, setcontentAbout] = useState(<Bio />);
 
   return (
     <>
       <div className={s.leftAside}>
         <div className={s.leftAsideItem}>
-          <img
-            src={iconbio}
-            alt="icon"
-            className={`${isIconBio ? s.iconAtive : null}`}
-          />
-          <img
-            src={iconEd}
-            alt="icon"
-            className={`${isIconBio ? s.iconAtive : null}`}
-          />
-          <img
-            src={iconInt}
-            alt="icon"
-            className={`${isIconBio ? s.iconAtive : null}`}
-          />
+          <img src={iconbio} alt="icon" className={s.AsideItem} />
+          <img src={iconEd} alt="icon" className={s.AsideItem} />
+          <img src={iconInt} alt="icon" className={s.AsideItem} />
         </div>
         <div className={s.menuAccordion}>
           <MenuAccordion
             title="personal-info"
             setcontentAbout={setcontentAbout}
-            setisIconBio={setisIconBio}
-            isIconBio={isIconBio}
           />
         </div>
       </div>
       <div className={s.contentAboutMe}>
+        <div className={s.titleContentAboutMe}>
+          <span>personal-info</span>
+          <img src={close} alt="close" className={s.iconClose} />
+        </div>
         <ContentAboutMe contentAbout={contentAbout} />
         <Scrollbar />
       </div>

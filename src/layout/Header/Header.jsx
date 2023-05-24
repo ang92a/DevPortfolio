@@ -17,7 +17,7 @@ export const Header = () => {
           <HeaderLink title="_projects" to="/projects" />
         </li>
         <li className={s.li}>
-          <HeaderLink title="_contats" to="/contacts" />
+          <HeaderLink title="_contats" to="/contact" />
         </li>
       </ul>
     </header>

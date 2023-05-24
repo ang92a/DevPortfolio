@@ -1,0 +1,10 @@
+.list {
+    counter-reset: section;
+    list-style-type: none;
+}
+
+.text::before {
+    counter-increment: section;
+    content: counters(section, ".") " ";
+}
+

@@ -1,4 +1,34 @@
-.accordion__item{
+.accordion__item {
     color: #607B96;
 }
 
+.accordion__title {
+    padding: 10px 0 10px 15px;
+    border-bottom: 1px solid #1E2D3D;
+    margin-bottom: 30px;
+}
+
+.accordion__subtitle {
+    cursor: pointer;
+    margin-bottom: 8px;
+    margin-left: 15px;
+}
+
+.accordion__subtitle>img {
+    margin-right: 10px;
+}
+
+.accordion__subtitle>span {
+    margin-right: 10px;
+    
+}
+
+.accordion__list {
+    cursor: pointer;
+    margin-bottom: 10px;
+}
+
+.accordion__list>li {
+    margin-bottom: 8px;
+    margin-left: 32px;
+}

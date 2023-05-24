@@ -3,7 +3,6 @@
     border-right: 1px solid #1E2D3D;
     display: flex;
     flex-direction: row;
-
 }
 
 .leftAsideItem {
@@ -26,21 +25,41 @@
     height: 50px;
 }
 
+.AsideItem {
+    margin-bottom: 20px;
+}
+
+
 .menuAccordion {
     display: flex;
     flex-direction: column;
-    padding-top: 20px;
-    align-items: flex-start;
+    min-width: calc(300px - 68px);
 }
 
 .contentAboutMe {
-    min-width: 500px;
-
+    max-width: 700px;
+    width: 50%;
     display: flex;
+    flex-direction: column;
+}
+
+.titleContentAboutMe {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #1E2D3D;
+
+}
+
+.iconClose {
+    margin-left: 50px;
+    width: 10px;
+    height: 10px;
 }
 
 .rightAside {
-    box-sizing:content-box;
+    box-sizing: content-box;
     padding: 15px;
     border-left: 1px solid #1E2D3D;
 }
