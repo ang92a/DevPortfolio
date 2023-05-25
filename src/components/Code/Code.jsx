@@ -1,4 +1,5 @@
-import { Highlighter } from "rc-highlight";
+import ReactEmbedGist from "react-embed-gist";
+// import { Highlighter } from "rc-highlight";
 import s from "./Code.module.css";
 import { useState } from "react";
 import ava from "../../img/1000.JPG";
@@ -6,15 +7,6 @@ import starEmpty from "./assets/starsEmpty.svg";
 import starFull from "./assets/starsFull.svg";
 import detals from "./assets/detals.svg";
 import close from "./assets/close.svg";
-
-const makeCode = `function initializeModelChunk<T>(chunk: ResolvedModelChunk): T {
-  const value: T = parseModel(chunk._response, chunk._value);
-  const initializedChunk: InitializedChunk<T> = (chunk: any);
-  initializedChunk._status = INITIALIZED;
-  initializedChunk._value = value;
-  return value;
-}
-`;
 
 export const Code = () => {
   const [isActive, setIsActive] = useState(false);
@@ -24,9 +16,26 @@ export const Code = () => {
     setLike(!like);
   };
 
+  // fetch("https://api.github.com/gists/47fa6c2cc2b490bf860898ee74941371")
+  //   .then((response) => {
+  //     // Success
+  //     if (response.ok) return response.json(); // Returns to then()
+
+  //     // Error
+  //     return Promise.reject(response);
+  //   })
+  //   .then((data) => {
+  //     console.log(data);
+  //   })
+  //   .catch((err) => {
+  //     console.error(err); // Error
+  //   });
+
+
+  
   return (
     <>
-      <p className={s.snippet_title}>// Code snippet showcase:</p>
+      <p className={s.snippet_title}> Code snippet showcase:</p>
       <div className={s.snippets}>
         <div className={s.snippet}>
           <div className={s.snippet_header}>
@@ -58,7 +67,10 @@ export const Code = () => {
             </div>
           </div>
           <div className={s.contentShowCase}>
-            <Highlighter>{makeCode}</Highlighter>
+            <script
+              crossorigin
+              src="https://gist.github.com/ang92a/47fa6c2cc2b490bf860898ee74941371.js"
+            ></script>
           </div>
         </div>
         {isActive && (
@@ -76,3 +88,12 @@ export const Code = () => {
     </>
   );
 };
+
+// const makeCode = `function initializeModelChunk<T>(chunk: ResolvedModelChunk): T {
+//   const value: T = parseModel(chunk._response, chunk._value);
+//   const initializedChunk: InitializedChunk<T> = (chunk: any);
+//   initializedChunk._status = INITIALIZED;
+//   initializedChunk._value = value;
+//   return value;
+// }
+// `;
