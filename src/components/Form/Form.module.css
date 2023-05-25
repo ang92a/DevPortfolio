@@ -2,9 +2,9 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-    align-self: center;
+    justify-content: center;
     width: 370px;
-    height: 370px;
+    height: 100%;
 }
 
 .label {

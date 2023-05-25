@@ -8,6 +8,8 @@
     border-radius: 8px;
     background: #011627;
     justify-content: space-between;
+    min-width: 1231px;
+    min-height: 700px;
 }
 
 main {

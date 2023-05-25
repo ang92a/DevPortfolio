@@ -1,7 +1,7 @@
 import ReactEmbedGist from "react-embed-gist";
-// import { Highlighter } from "rc-highlight";
+import { Highlighter } from "rc-highlight";
 import s from "./Code.module.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import ava from "../../img/1000.JPG";
 import starEmpty from "./assets/starsEmpty.svg";
 import starFull from "./assets/starsFull.svg";
@@ -16,23 +16,32 @@ export const Code = () => {
     setLike(!like);
   };
 
-  // fetch("https://api.github.com/gists/47fa6c2cc2b490bf860898ee74941371")
-  //   .then((response) => {
-  //     // Success
-  //     if (response.ok) return response.json(); // Returns to then()
+  useEffect(() => {
+    fetch("https://api.github.com/gists/47fa6c2cc2b490bf860898ee74941371")
+      .then((response) => {
+        // Success
+        if (response.ok) return response.json(); // Returns to then()
 
-  //     // Error
-  //     return Promise.reject(response);
-  //   })
-  //   .then((data) => {
-  //     console.log(data);
-  //   })
-  //   .catch((err) => {
-  //     console.error(err); // Error
-  //   });
+        // Error
+        return Promise.reject(response);
+      })
+      .then((data) => {
+        const obj = {
+          content: data.files["first.jsx"].content,
+          login: data.owner.login,
+          date: data.files["first.jsx"].created_at,
+          ava: data.owner.avatar_url,
+          comment: data.comments_url.body,
+        };
+        setData(obj);
+      })
+      .catch((err) => {
+        console.error(err); // Error
+      });
+  }, []);
 
+  const [data, setData] = useState({});
 
-  
   return (
     <>
       <p className={s.snippet_title}> Code snippet showcase:</p>
@@ -41,11 +50,11 @@ export const Code = () => {
           <div className={s.snippet_header}>
             <div className={s.snippet_headerLeft}>
               <div className={s.divAva}>
-                <img src={ava} alt="ava" className={s.ava} />
+                <img src={data.ava} alt="ava" className={s.ava} />
               </div>
               <div className={s.divTeg}>
-                <span className={s.snippet_tag}>@ang92a</span>
-                <span className={s.snippet_tag}>something text</span>
+                <span className={s.snippet_tag}>{data.login}</span>
+                <span className={s.snippet_tag}>{data.date}</span>
               </div>
             </div>
             <div className={s.snippet_headerRight}>
@@ -67,15 +76,12 @@ export const Code = () => {
             </div>
           </div>
           <div className={s.contentShowCase}>
-            <script
-              crossorigin
-              src="https://gist.github.com/ang92a/47fa6c2cc2b490bf860898ee74941371.js"
-            ></script>
+            <Highlighter>{data.content}</Highlighter>
           </div>
         </div>
         {isActive && (
           <div className={s.moreInfo}>
-            <p>more information</p>
+            <p>more info</p>
             <img
               src={close}
               alt="close"

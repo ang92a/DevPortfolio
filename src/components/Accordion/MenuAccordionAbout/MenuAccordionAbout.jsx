@@ -9,18 +9,17 @@ import { School } from "../../School/School";
 const univers = "еще какой то текст";
 const game = "опять какой то текст";
 
-export const MenuAccordionAbout = ({ title, setcontentAbout }) => {
+export const MenuAccordionAbout = ({
+  title,
+  setcontentAbout,
+  active,
+  setActive,
+  arr,
+}) => {
   // выпадающее меню
 
   const [isActiveEd, setIsActiveEd] = useState(false);
   const [isActiveInt, setIsActiveInt] = useState(false);
-  const [active, setActive] = useState("bio");
-
-  let arr = [
-    "bio",
-    ["education", ["school", "univers"]],
-    ["interests", ["game"]],
-  ];
 
   return (
     <div className={s.accordion__item}>

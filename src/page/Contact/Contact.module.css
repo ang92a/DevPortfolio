@@ -23,11 +23,15 @@
     box-sizing: content-box;
     padding: 15px;
     border-left: 1px solid #1E2D3D;
+    flex-basis: 50%;
+    justify-content: center;
 }
 
 .conteinerForm {
     display: flex;
     justify-content: center;
     align-items: center;
+    overflow: auto;
+    padding: 15px;
     height: 100%;
 }

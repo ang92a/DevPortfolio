@@ -2,6 +2,7 @@
     padding: 10px 0 10px 15px;
     border-bottom: 1px solid #1E2D3D;
     cursor: pointer;
+    color: #fff;
 }
 
 .accordionSpan {
@@ -17,6 +18,11 @@
 .accordion__list>li {
     margin-bottom: 10px;
 }
+
+.accordion__list>li:hover{
+    color: #fff;
+}
+
 
 .accordion__lastlist {
     border-bottom: none

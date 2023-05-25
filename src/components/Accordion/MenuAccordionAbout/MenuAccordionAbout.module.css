@@ -6,6 +6,7 @@
     padding: 10px 0 10px 15px;
     border-bottom: 1px solid #1E2D3D;
     margin-bottom: 30px;
+    color: #fff;
 }
 
 .accordion__subtitle {
@@ -14,13 +15,17 @@
     margin-left: 15px;
 }
 
+.accordion__subtitle:hover{
+    color: #fff;
+}
+
 .accordion__subtitle>img {
     margin-right: 10px;
 }
 
 .accordion__subtitle>span {
     margin-right: 10px;
-    
+
 }
 
 .accordion__list {
@@ -33,6 +38,11 @@
     margin-left: 32px;
 }
 
-.active{
+.accordion__list>li:hover {
+    color: #fff;
+}
+
+
+.active {
     color: #fff;
 }

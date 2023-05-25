@@ -19,6 +19,7 @@ export const Contact = () => {
     setInputEmail("");
     setInputMessage("");
   };
+  
   return (
     <>
       <div className={s.leftAside}>

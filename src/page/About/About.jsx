@@ -11,24 +11,56 @@ import { Bio } from "../../components/Bio/Bio";
 import close from "../../components/Code/assets/close.svg";
 
 export const About = () => {
-  
   const [contentAbout, setcontentAbout] = useState(<Bio />);
 
-  // const [isActive, setIsActive] = useState("1");
-  // const arr = ["1", "2", "3"];
+  const [active, setActive] = useState("bio");
+
+  let arr = [
+    "bio",
+    ["education", ["school", "univers"]],
+    ["interests", ["game"]],
+    iconbio,
+    iconEd,
+    iconInt,
+  ];
 
   return (
     <>
       <div className={s.leftAside}>
         <div className={s.leftAsideItem}>
-          <img src={iconbio} alt="icon" className={s.AsideItem} />
-          <img src={iconEd} alt="icon" className={s.AsideItem} />
-          <img src={iconInt} alt="icon" className={s.AsideItem} />
+          <img
+            src={iconbio}
+            alt="icon"
+            className={active === arr[0] ? s.activeAsideItem : s.AsideItem}
+          />
+          <img
+            src={iconEd}
+            alt="icon"
+            className={
+              active === arr[1][0] ||
+              active === arr[1][1][0] ||
+              active === arr[1][1][1]
+                ? s.activeAsideItem
+                : s.AsideItem
+            }
+          />
+          <img
+            src={iconInt}
+            alt="icon"
+            className={
+              active == arr[2][0] || active == arr[2][1]
+                ? s.activeAsideItem
+                : s.AsideItem
+            }
+          />
         </div>
         <div className={s.menuAccordion}>
           <MenuAccordionAbout
             title="personal-info"
             setcontentAbout={setcontentAbout}
+            active={active}
+            setActive={setActive}
+            arr={arr}
           />
         </div>
       </div>
