@@ -1,5 +1,30 @@
 import s from "./Form.module.css";
 import { Button } from "../../ui/Button/Button";
+import axios from "axios";
+// import { useEffect } from "react";
+
+const handleSubmit = (event) => {
+  event.preventDefault();
+  const form = event.target;
+  const data = new FormData(form);
+
+  axios
+    .post(
+      "https://api.telegram.org/bot6225911755:AAEYee0xzZWcZdC88IEuv4MDhxOKq1n06QA/sendMessage",
+      {
+        chat_id: -992063462,
+        text: `Имя: ${data.get("name")}, Email: ${data.get(
+          "email")}, Сообщение: ${data.get("message")}`,
+      }
+    )
+    .then((response) => {
+      console.log(response.data);
+      form.reset();
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
 
 export const Form = (props) => {
   const {
@@ -17,6 +42,7 @@ export const Form = (props) => {
     <form
       className={s.form}
       onClick={(evt) => evt.preventDefault()}
+      onSubmit={(evt) => handleSubmit(evt)}
     >
       {/* инпут для имени */}
 
@@ -62,6 +88,7 @@ export const Form = (props) => {
         onChange={(evt) => setInputMessage(evt.target.value)}
       ></textarea>
       <Button
+        type="submit"
         title="submit-message"
         handler={setRenderForm}
         renderForm={renderForm}

@@ -2,7 +2,7 @@ import s from "./Button.module.css";
 import clsx from "clsx";
 
 export const Button = (props) => {
-  const { title, submitMessage, handler, thanks } = props;
+  const { title, submitMessage, handler, thanks, type } = props;
 
   const innerClassName = clsx(s.button, {
     [s.button__submitMessage]: submitMessage,
@@ -10,7 +10,7 @@ export const Button = (props) => {
   });
 
   return (
-    <button onClick={handler} className={innerClassName}>
+    <button type={type} onClick={handler} className={innerClassName}>
       {title}
     </button>
   );

@@ -71,3 +71,7 @@
     filter: brightness(10);
     margin-bottom: 20px;
 }
+
+.AsideItem:hover {
+    filter: brightness(10);
+}
