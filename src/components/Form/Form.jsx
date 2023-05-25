@@ -13,6 +13,8 @@ export const Form = (props) => {
     renderForm,
   } = props;
 
+
+
   return (
     <form className={s.form} onClick={(evt) => evt.preventDefault()}>
       {/* инпут для имени */}

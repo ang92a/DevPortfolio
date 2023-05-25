@@ -1,4 +1,5 @@
 import s from "./Hello.module.css";
+import bg from "../../img/Background Blurs.svg"
 
 export const Hello = () => {
   return (
@@ -30,7 +31,7 @@ export const Hello = () => {
         <div className={s.game}>
           <img
             className={s.bggame}
-            src="../../img/Background Blurs.svg"
+            src={bg}
             alt=""
           />
         </div>

@@ -11,8 +11,10 @@ import { Bio } from "../../components/Bio/Bio";
 import close from "../../components/Code/assets/close.svg";
 
 export const About = () => {
-  
   const [contentAbout, setcontentAbout] = useState(<Bio />);
+
+  // const [isActive, setIsActive] = useState("1");
+  // const arr = ["1", "2", "3"];
 
   return (
     <>

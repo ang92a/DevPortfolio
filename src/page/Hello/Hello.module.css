@@ -11,6 +11,7 @@
     display: flex;
     margin: 0 auto;
     padding: 0 15px;
+    position: relative;
 }
 
 .visitCard {
@@ -55,9 +56,7 @@
 
 
 .game {
-    background: transparent;
-    border: 1px solid #fff;
-    min-width: 500px;
-    height: auto;
-    margin-left: 50px;
+    position: absolute;
+    top: -111%;
+    left: -4%;
 }

@@ -13,6 +13,12 @@ export const Contact = () => {
 
   const [renderForm, setRenderForm] = useState(false);
 
+  const handler = () => {
+    setRenderForm(!renderForm);
+    setInputName("");
+    setInputEmail("");
+    setInputMessage("");
+  };
   return (
     <>
       <div className={s.leftAside}>
@@ -28,20 +34,17 @@ export const Contact = () => {
         <div className={s.conteinerForm}>
           {!renderForm ? (
             <Form
-              inputName={inputName}
+              //inputName={inputName}
               setInputName={setInputName}
-              inputEmail={inputEmail}
+              //inputEmail={inputEmail}
               setInputEmail={setInputEmail}
-              inputMessage={inputMessage}
+              //inputMessage={inputMessage}
               setInputMessage={setInputMessage}
-              setRenderForm={setRenderForm}
               renderForm={renderForm}
+              setRenderForm={setRenderForm}
             />
           ) : (
-            <ContentFormMess
-              setRenderForm={setRenderForm}
-              renderForm={renderForm}
-            />
+            <ContentFormMess handler={handler} />
           )}
         </div>
       </div>
