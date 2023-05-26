@@ -11,10 +11,14 @@ import { Bio } from "../../components/Bio/Bio";
 import close from "../../components/Code/assets/close.svg";
 
 export const About = () => {
+
+  // состояние для отрисовки div с информацией 
   const [contentAbout, setcontentAbout] = useState(<Bio />);
 
+  // состояние для выделения выбранного пункта меню
   const [active, setActive] = useState("bio");
 
+  // массив для отслеживания выбранного меню
   let arr = [
     "bio",
     ["education", ["school", "univers"]],
@@ -31,11 +35,13 @@ export const About = () => {
           <img
             src={iconbio}
             alt="icon"
+            //подсвечивать соответствующую иконку выброного пункта
             className={active === arr[0] ? s.activeAsideItem : s.AsideItem}
           />
           <img
             src={iconEd}
             alt="icon"
+            //подсвечивать соответствующую иконку выброного пункта
             className={
               active === arr[1][0] ||
               active === arr[1][1][0] ||
@@ -48,6 +54,7 @@ export const About = () => {
             src={iconInt}
             alt="icon"
             className={
+              //подсвечивать соответствующую иконку выброного пункта
               active == arr[2][0] || active == arr[2][1]
                 ? s.activeAsideItem
                 : s.AsideItem
@@ -58,7 +65,7 @@ export const About = () => {
           <MenuAccordionAbout
             title="personal-info"
             setcontentAbout={setcontentAbout}
-            active={active}
+            active={active}   // состояние которое будет отслеживать активный пункт меню
             setActive={setActive}
             arr={arr}
           />
@@ -80,6 +87,8 @@ export const About = () => {
   );
 };
 
+
+//нумерация строк автоматически
 // function numeric(number) {
 //   let arr = [];
 //   for (let i = 1; i <= number / 27; i++) {

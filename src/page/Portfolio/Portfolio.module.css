@@ -1,0 +1,35 @@
+.leftAside {
+    min-width: 300px;
+    border-right: 1px solid #1E2D3D;
+}
+
+.conteinerPortf {
+    flex-basis: 100%;
+}
+
+
+.titleContentPortf {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #1E2D3D;
+}
+
+.contentPortf {
+    display: flex;
+    height: 100%;
+}
+
+.portf__list {
+    padding-left: 20px;
+}
+
+.portf__title {
+    padding: 10px 0 10px 15px;
+    border-bottom: 1px solid #1E2D3D;
+    margin-bottom: 30px;
+    color: #fff;
+}
+
+

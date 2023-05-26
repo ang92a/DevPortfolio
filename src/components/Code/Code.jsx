@@ -1,20 +1,23 @@
-import ReactEmbedGist from "react-embed-gist";
 import { Highlighter } from "rc-highlight";
 import s from "./Code.module.css";
 import { useState, useEffect } from "react";
-import ava from "../../img/1000.JPG";
 import starEmpty from "./assets/starsEmpty.svg";
 import starFull from "./assets/starsFull.svg";
 import detals from "./assets/detals.svg";
 import close from "./assets/close.svg";
 
 export const Code = () => {
+  // состояние на нажатие кнопки детали 
   const [isActive, setIsActive] = useState(false);
+
+  // состояние на нажатие на звездочку
   const [like, setLike] = useState(false);
 
   const handleLike = () => {
     setLike(!like);
   };
+
+  // запрос на данные git
 
   useEffect(() => {
     fetch("https://api.github.com/gists/47fa6c2cc2b490bf860898ee74941371")
@@ -31,7 +34,6 @@ export const Code = () => {
           login: data.owner.login,
           date: data.files["first.jsx"].created_at,
           ava: data.owner.avatar_url,
-          comment: data.comments_url.body,
         };
         setData(obj);
       })
@@ -40,7 +42,57 @@ export const Code = () => {
       });
   }, []);
 
+  // запрос на комментарии
+
+  useEffect(() => {
+    fetch(
+      "https://api.github.com/gists/47fa6c2cc2b490bf860898ee74941371/comments"
+    )
+      .then((response) => {
+        // Success
+        if (response.ok) return response.json(); // Returns to then()
+
+        // Error
+        return Promise.reject(response);
+      })
+      .then((data) => {
+        const obj = {
+          comment: data["0"].body,
+        };
+        setComm(obj);
+      })
+      .catch((err) => {
+        console.error(err); // Error
+      });
+  }, []);
+
+  // запрос на звездочки
+
+  useEffect(() => {
+    fetch("https://api.github.com/users/ang92a/subscriptions")
+      .then((response) => {
+        // Success
+        if (response.ok) return response.json(); // Returns to then()
+
+        // Error
+        return Promise.reject(response);
+      })
+      .then((data) => {
+        const obj = {
+          star: data["17"].stargazers_count,
+        };
+        setStar(obj);
+      })
+      .catch((err) => {
+        console.error(err); // Error
+      });
+  }, []);
+
+  // состояние на запросы
+
   const [data, setData] = useState({});
+  const [comm, setComm] = useState({});
+  const [star, setStar] = useState({});
 
   return (
     <>
@@ -71,7 +123,7 @@ export const Code = () => {
                 ) : (
                   <img src={starEmpty} alt="starEmpty" />
                 )}
-                <span>stars</span>
+                <span> {star.star} stars</span>
               </div>
             </div>
           </div>
@@ -81,7 +133,7 @@ export const Code = () => {
         </div>
         {isActive && (
           <div className={s.moreInfo}>
-            <p>more info</p>
+            <p>{comm.comment}</p>
             <img
               src={close}
               alt="close"
