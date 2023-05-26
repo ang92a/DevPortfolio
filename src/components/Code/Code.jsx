@@ -141,7 +141,51 @@ export const Code = () => {
             />
           </div>
         )}
-        {/* второй сниппет */}
+        {/* второй сниппет для прокрутки*/}
+
+        <div className={s.snippet}>
+          <div className={s.snippet_header}>
+            <div className={s.snippet_headerLeft}>
+              <div className={s.divAva}>
+                <img src={data.ava} alt="ava" className={s.ava} />
+              </div>
+              <div className={s.divTeg}>
+                <span className={s.snippet_tag}>{data.login}</span>
+                <span className={s.snippet_tag}>{data.date}</span>
+              </div>
+            </div>
+            <div className={s.snippet_headerRight}>
+              <div
+                className={s.snippet_details}
+                onClick={() => setIsActive(!isActive)}
+              >
+                <img src={detals} alt="detals" />
+                <span>details</span>
+              </div>
+              <div className={s.snippet_stars} onClick={handleLike}>
+                {like ? (
+                  <img src={starFull} alt="starFull" />
+                ) : (
+                  <img src={starEmpty} alt="starEmpty" />
+                )}
+                <span> {star.star} stars</span>
+              </div>
+            </div>
+          </div>
+          <div className={s.contentShowCase}>
+            <Highlighter>{data.content}</Highlighter>
+          </div>
+        </div>
+        {isActive && (
+          <div className={s.moreInfo}>
+            <p>{comm.comment}</p>
+            <img
+              src={close}
+              alt="close"
+              onClick={() => setIsActive(!isActive)}
+            />
+          </div>
+        )}
       </div>
     </>
   );
