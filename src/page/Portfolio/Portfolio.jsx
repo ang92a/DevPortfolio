@@ -15,6 +15,9 @@ import Prof2 from "./assets/cardPhoto2.webp";
 import Prof3 from "./assets/CardPhoto3.webp";
 
 export const Portfolio = () => {
+  // состояние для отрисовки всех карточек когда не выбрано ничего
+
+  //состояние для выделения чекнутого меню
   const [checkedHtml, setCheckedHtml] = useState(false);
   const [checkedCss, setCheckedCss] = useState(false);
   const [checkedReact, setCheckedReact] = useState(false);
@@ -78,24 +81,30 @@ export const Portfolio = () => {
           <img src={close} alt="close" className={s.iconClose} />
         </div>
         <div className={s.contentPortf}>
-          <Card
-            name="Project 1"
-            cardPhoto={Prof1}
-            cardIcon={react}
-            link="https://github.com/ang92a?tab=repositories"
-          />
-          <Card
-            name="Project 2"
-            cardPhoto={Prof2}
-            cardIcon={html}
-            link="https://github.com/ang92a?tab=repositories"
-          />
-          <Card
-            name="Project 3"
-            cardPhoto={Prof3}
-            cardIcon={css}
-            link="https://github.com/ang92a?tab=repositories"
-          />
+          {checkedReact && (
+            <Card
+              name="Project 1"
+              cardPhoto={Prof1}
+              cardIcon={react}
+              link="https://github.com/ang92a?tab=repositories"
+            />
+          )}
+          {checkedHtml && (
+            <Card
+              name="Project 2"
+              cardPhoto={Prof2}
+              cardIcon={html}
+              link="https://github.com/ang92a?tab=repositories"
+            />
+          )}
+          {checkedCss && (
+            <Card
+              name="Project 3"
+              cardPhoto={Prof3}
+              cardIcon={css}
+              link="https://github.com/ang92a?tab=repositories"
+            />
+          )}
         </div>
       </div>
     </>
