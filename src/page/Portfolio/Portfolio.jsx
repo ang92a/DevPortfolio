@@ -1,3 +1,4 @@
+import { useState } from "react";
 import s from "./Portfolio.module.css";
 import close from "./assets/close.svg";
 import { CompMenuProfCheck } from "../../ui/CompMenuProfCheck/CompMenuProfCheck";
@@ -14,6 +15,13 @@ import Prof2 from "./assets/cardPhoto2.webp";
 import Prof3 from "./assets/CardPhoto3.webp";
 
 export const Portfolio = () => {
+  const [checkedHtml, setCheckedHtml] = useState(false);
+  const [checkedCss, setCheckedCss] = useState(false);
+  const [checkedReact, setCheckedReact] = useState(false);
+  const [checkedVue, setCheckedVue] = useState(false);
+  const [checkedFlutter, setCheckedFlutter] = useState(false);
+  const [checkedGatsby, setCheckedGatsby] = useState(false);
+
   return (
     <>
       <div className={s.leftAside}>
@@ -24,13 +32,42 @@ export const Portfolio = () => {
               <span className={s.portfSpan}>projects</span>
             </div>
             <ul className={s.portf__list}>
-              <CompMenuProfCheck text="HTML" icon={html} />
-              <CompMenuProfCheck text="React" icon={react} />
-              <CompMenuProfCheck text="CSS" icon={css} />
-              <CompMenuProfCheck text="Angular" icon={angular} />
-              <CompMenuProfCheck text="Flutter" icon={flutter} />
-              <CompMenuProfCheck text="Vue" icon={vue} />
-              <CompMenuProfCheck text="Gatsby" icon={gatsby} />
+              <CompMenuProfCheck
+                text="HTML"
+                icon={html}
+                checked={checkedHtml}
+                setChecked={setCheckedHtml}
+              />
+              <CompMenuProfCheck
+                text="React"
+                icon={react}
+                checked={checkedReact}
+                setChecked={setCheckedReact}
+              />
+              <CompMenuProfCheck
+                text="CSS"
+                icon={css}
+                checked={checkedCss}
+                setChecked={setCheckedCss}
+              />
+              <CompMenuProfCheck
+                text="Flutter"
+                icon={flutter}
+                checked={checkedFlutter}
+                setChecked={setCheckedFlutter}
+              />
+              <CompMenuProfCheck
+                text="Vue"
+                icon={vue}
+                checked={checkedVue}
+                setChecked={setCheckedVue}
+              />
+              <CompMenuProfCheck
+                text="Gatsby"
+                icon={gatsby}
+                checked={checkedGatsby}
+                setChecked={setCheckedGatsby}
+              />
             </ul>
           </div>
         </div>

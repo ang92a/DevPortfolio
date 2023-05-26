@@ -67,4 +67,11 @@ margin-right: 10px;
 }
 
 
+.active{
+    color: #fff;
+}
 
+.iconActive {
+    margin-right: 10px;
+    filter: brightness(10);
+}
