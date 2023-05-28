@@ -29,7 +29,7 @@ main {
 }
 
 html[data-theme="light"] {
-    --color-background: #D5DADC;
+    --color-background: #F5F5F5;
     --color-font: #011627;
 }
 

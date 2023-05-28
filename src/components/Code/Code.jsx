@@ -128,7 +128,9 @@ export const Code = () => {
             </div>
           </div>
           <div className={s.contentShowCase}>
-            <Highlighter>{data.content}</Highlighter>
+            <Highlighter>
+              {data.content}
+            </Highlighter>
           </div>
         </div>
         {isActive && (

@@ -77,7 +77,6 @@ export const About = () => {
           <img src={close} alt="close" className={s.iconClose} />
         </div>
         <ContentAboutMe contentAbout={contentAbout} />
-        
         <Scrollbar />
       </div>
       <div className={s.rightAside}>

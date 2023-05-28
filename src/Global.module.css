@@ -28,3 +28,6 @@ ul {
     list-style: none;
 }
 
+.body {
+    color: var(--color-font)
+}
