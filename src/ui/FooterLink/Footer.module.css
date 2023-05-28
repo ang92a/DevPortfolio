@@ -16,3 +16,24 @@
     margin-right: 10px;
     color: #607b96;
 }
+
+
+/* поменять тему сайта */
+
+:root {
+    --color: #607B96;
+    --filter-i: brightness(10);
+}
+
+html[data-theme="light"] {
+    --color: #011627;
+    --filter-i: brightness(50%);
+}
+
+.link__footer {
+    color: var(--color)
+}
+
+.Icon:hover {
+    filter: var(--filter-i)
+}

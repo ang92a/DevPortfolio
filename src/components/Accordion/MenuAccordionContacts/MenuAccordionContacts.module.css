@@ -19,11 +19,22 @@
     margin-bottom: 10px;
 }
 
-.accordion__list>li:hover{
+.accordion__list>li:hover {
     color: #fff;
 }
 
 
 .accordion__lastlist {
     border-bottom: none
+}
+
+
+/* поменять тему */
+
+.accordion__title {
+    color: var(--col-fo)
+}
+
+.accordion__list>li:hover {
+    color: var(--col-fo)
 }

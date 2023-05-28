@@ -33,3 +33,16 @@
 }
 
 
+/* поменять тему сайта */
+
+:root {
+    --col-title-port:  #fff;
+}
+
+html[data-theme="light"] {
+    --col-title-port: #011627
+}
+
+.portf__title{
+ color: var(--col-title-port);
+}

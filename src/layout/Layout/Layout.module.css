@@ -19,3 +19,20 @@ main {
     height: 100%;
     overflow: hidden;
 }
+
+
+/* поменять тему сайта */
+
+:root {
+    --color-background: #011627;
+    --color-font: #607b96;
+}
+
+html[data-theme="light"] {
+    --color-background: #D5DADC;
+    --color-font: #011627;
+}
+
+.GlobalWrapper {
+    background: var(--color-background)
+}

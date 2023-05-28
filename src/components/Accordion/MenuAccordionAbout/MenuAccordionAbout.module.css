@@ -15,7 +15,7 @@
     margin-left: 15px;
 }
 
-.accordion__subtitle:hover{
+.accordion__subtitle:hover {
     color: #fff;
 }
 
@@ -25,7 +25,6 @@
 
 .accordion__subtitle>span {
     margin-right: 10px;
-
 }
 
 .accordion__list {
@@ -46,3 +45,31 @@
 .active {
     color: #fff;
 }
+
+
+/* поменять тему сайта */
+
+:root {
+    --col-sub-hov: #fff;
+}
+
+html[data-theme="light"] {
+    --col-sub-hov: #011627
+}
+
+.accordion__subtitle:hover {
+    color: var(--col-sub-hov)
+}
+
+.accordion__list>li:hover {
+    color: var(--col-sub-hov)
+}
+
+.active {
+    color: var(--col-sub-hov)
+}
+
+.accordion__title {
+    color: var(--col-sub-hov)
+}
+

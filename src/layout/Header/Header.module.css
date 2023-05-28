@@ -1,6 +1,5 @@
 .header__menu {
     display: flex;
-
     background: transparent;
 }
 
@@ -44,4 +43,19 @@
 .textName {
     padding-left: 20px;
 
+}
+
+
+/* поменять тему сайта */
+
+:root {
+    --color: #607B96;
+}
+
+html[data-theme="light"] {
+    --color: #011627;
+}
+
+.li:first-child{
+    color: var(--color)
 }

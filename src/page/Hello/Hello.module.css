@@ -60,3 +60,27 @@
     top: -111%;
     left: -4%;
 }
+
+/* поменять тему сайта */
+
+:root {
+    --color-font: #E5E9F0;
+
+}
+
+html[data-theme="light"] {
+    --color-font: #011627;
+
+}
+
+.textHi {
+    color: var(--color-font)
+}
+
+.textTitle {
+    color: var(--color-font)
+}
+
+.textComment {
+    color: var(--color-font)
+}

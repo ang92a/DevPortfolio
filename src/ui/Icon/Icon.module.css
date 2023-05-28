@@ -11,3 +11,18 @@
     filter: brightness(10);
     translate: 0.3s;
 }
+
+/* поменять тему сайта */
+
+:root {
+    --filter-ic: brightness(10);
+}
+
+html[data-theme="light"] {
+    --filter-ic: brightness(50%);
+}
+
+.Icon__twitter:hover,
+.Icon__facebook:hover {
+    filter: var(--filter-ic)
+}

@@ -1,17 +1,18 @@
-.itemCheck{
+.itemCheck {
     margin-bottom: 20px;
     display: flex;
 }
 
-.icon{
-margin-right: 10px;
+.icon {
+    margin-right: 10px;
 }
 
 
-.checkSpan{
+.checkSpan {
     display: inline-block;
     text-align: center;
 }
+
 .checkbox {
     position: relative;
     padding-left: 30px;
@@ -67,11 +68,38 @@ margin-right: 10px;
 }
 
 
-.active{
+.active {
     color: #fff;
 }
 
 .iconActive {
     margin-right: 10px;
     filter: brightness(10);
+}
+
+
+
+:root {
+    --col-bg: #011627;
+    --col-fo: #fff;
+    --filter: brightness(10);
+
+}
+
+html[data-theme="light"] {
+    --col-bg: #D6D7D8;
+    --col-fo: #011627;
+    --filter: brightness(50%);
+}
+
+.checkmark {
+    background-color: var(--col-bg);
+}
+
+.active {
+    color: var(--col-fo)
+}
+
+.iconActive {
+    filter: var(--filter)
 }

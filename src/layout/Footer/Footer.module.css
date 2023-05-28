@@ -6,7 +6,6 @@
 .footer__menu {
     display: flex;
     align-items: center;
-
     background: transparent;
 }
 
@@ -37,4 +36,32 @@
     font-weight: 450;
     line-height: 24px;
     color: #607B96;
+}
+
+.btnTheme {
+    border-radius: 8px;
+    padding: 10px 14px 10px 14px;
+    font-size: 14px;
+    font-weight: 450;
+    line-height: 18px;
+    text-align: center;
+    color: #FFFFFF;
+    border: none;
+    margin-left: auto;
+    cursor: pointer;
+    background: #1C2B3A;
+}
+
+/* поменять тему сайта */
+
+:root {
+    --color: #607B96;
+}
+
+html[data-theme="light"] {
+    --color: #011627;
+}
+
+.findMe {
+    color: var(--color)
 }

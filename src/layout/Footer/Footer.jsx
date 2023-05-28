@@ -6,7 +6,7 @@ import Twitter from "./assets/Twitter.svg";
 import Facebook from "./assets/Facebook.svg";
 import Logo from "./assets/Logo.svg";
 
-export const Footer = () => {
+export const Footer = ({ onChangeTheme }) => {
   return (
     <div className={s.footer}>
       <ul className={s.footer__menu}>
@@ -19,6 +19,7 @@ export const Footer = () => {
         <li>
           <Icon img={Facebook} facebook src="https://www.google.ru/" footer />
         </li>
+        <button onClick={onChangeTheme} className={s.btnTheme}>change-theme</button>
         <li>
           <FooterLink
             title="_ang92a"

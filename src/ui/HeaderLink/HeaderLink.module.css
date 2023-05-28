@@ -4,7 +4,26 @@
     color: rgba(96, 123, 150, 1);
 }
 
-.link__header:hover{
+.link__header:hover {
     color: #fff;
 }
 
+/* поменять тему сайта */
+
+:root {
+    --color-f: rgba(96, 123, 150, 1);
+    --color-h: #fff;
+}
+
+html[data-theme="light"] {
+    --color-f: #011627;
+    --color-h: #FEA55F;
+}
+
+.link__header {
+    color: var(--color-f)
+}
+
+.link__header:hover {
+    color: var(--color-h)
+}
