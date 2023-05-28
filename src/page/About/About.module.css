@@ -76,11 +76,7 @@
     filter: brightness(10);
 }
 
-.empty {
-    content: "";
-    width: 100%;
-    height: 15px;
-}
+
 
 /* поменять тему сайта */
 

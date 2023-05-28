@@ -4,7 +4,10 @@ import s from "./ContentAboutMe.module.css";
 export const ContentAboutMe = ({ contentAbout }) => {
   return (
     <>
-      <div className={s.content}>{contentAbout}</div>
+      <div className={s.content}>
+        {contentAbout}
+        <div className={s.empty}></div>
+      </div>
     </>
   );
 };
