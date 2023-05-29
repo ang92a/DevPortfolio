@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Form } from "../../components/Form/Form";
 import { MenuAccordionContacts } from "../../components/Accordion/MenuAccordionContacts/MenuAccordionContacts";
@@ -15,8 +14,6 @@ export const Contact = () => {
   // сообщение после отправки
   const [renderForm, setRenderForm] = useState(false);
 
-
-
   const handlerRender = () => {
     setRenderForm(!renderForm);
     setInputName("");
@@ -27,8 +24,6 @@ export const Contact = () => {
   const handlerTelegram = () => {
     setRenderForm(!renderForm);
   };
-
-
 
   return (
     <>
@@ -45,11 +40,8 @@ export const Contact = () => {
         <div className={s.conteinerForm}>
           {!renderForm ? (
             <Form
-              //inputName={inputName}
               setInputName={setInputName}
-              //inputEmail={inputEmail}
               setInputEmail={setInputEmail}
-              //inputMessage={inputMessage}
               setInputMessage={setInputMessage}
               handler={handlerTelegram}
             />

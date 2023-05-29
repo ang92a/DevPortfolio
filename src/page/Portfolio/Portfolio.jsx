@@ -15,15 +15,48 @@ import Prof2 from "./assets/cardPhoto2.webp";
 import Prof3 from "./assets/CardPhoto3.webp";
 
 export const Portfolio = () => {
-  // состояние для отрисовки всех карточек когда не выбрано ничего
+  // массив с обьектами
 
-  //состояние для выделения чекнутого меню
-  const [checkedHtml, setCheckedHtml] = useState(false);
-  const [checkedCss, setCheckedCss] = useState(false);
-  const [checkedReact, setCheckedReact] = useState(false);
-  const [checkedVue, setCheckedVue] = useState(false);
-  const [checkedFlutter, setCheckedFlutter] = useState(false);
-  const [checkedGatsby, setCheckedGatsby] = useState(false);
+  const data = [
+    { name: "HTML", icon: html },
+    { name: "React", icon: react },
+    { name: "CSS", icon: css },
+    { name: "Flutter", icon: flutter },
+    { name: "Vue", icon: vue },
+    { name: "Gatsby", icon: gatsby },
+  ];
+
+  const dataCard = [
+    {
+      name: "Project 1",
+      cardPhoto: Prof1,
+      cardIcon: react,
+      key: "React",
+      link: "https://github.com/ang92a?tab=repositories",
+    },
+    {
+      name: "Project 2",
+      cardPhoto: Prof2,
+      cardIcon: html,
+      key: "HTML",
+      link: "https://github.com/ang92a?tab=repositories",
+    },
+    {
+      name: "Project 3",
+      cardPhoto: Prof3,
+      cardIcon: css,
+      key: "CSS",
+      link: "https://github.com/ang92a?tab=repositories",
+    },
+  ];
+
+  //состояние для отрисовки только выбранных проектов
+  const [checked, setChecked] = useState([]);
+
+  const check = (name) => setChecked([...checked, name]);
+  const uncheck = (name) => setChecked(checked.filter((elem) => elem !== name));
+
+  console.log(checked);
 
   return (
     <>
@@ -35,42 +68,17 @@ export const Portfolio = () => {
               <span className={s.portfSpan}>projects</span>
             </div>
             <ul className={s.portf__list}>
-              <CompMenuProfCheck
-                text="HTML"
-                icon={html}
-                checked={checkedHtml}
-                setChecked={setCheckedHtml}
-              />
-              <CompMenuProfCheck
-                text="React"
-                icon={react}
-                checked={checkedReact}
-                setChecked={setCheckedReact}
-              />
-              <CompMenuProfCheck
-                text="CSS"
-                icon={css}
-                checked={checkedCss}
-                setChecked={setCheckedCss}
-              />
-              <CompMenuProfCheck
-                text="Flutter"
-                icon={flutter}
-                checked={checkedFlutter}
-                setChecked={setCheckedFlutter}
-              />
-              <CompMenuProfCheck
-                text="Vue"
-                icon={vue}
-                checked={checkedVue}
-                setChecked={setCheckedVue}
-              />
-              <CompMenuProfCheck
-                text="Gatsby"
-                icon={gatsby}
-                checked={checkedGatsby}
-                setChecked={setCheckedGatsby}
-              />
+              {data.map((obj) => (
+                <CompMenuProfCheck
+                  key={obj.name}
+                  name={obj.name}
+                  icon={obj.icon}
+                  checked={checked.includes(obj.name)}
+                  setChecked={setChecked}
+                  check={check}
+                  uncheck={uncheck}
+                />
+              ))}
             </ul>
           </div>
         </div>
@@ -81,32 +89,22 @@ export const Portfolio = () => {
           <img src={close} alt="close" className={s.iconClose} />
         </div>
         <div className={s.contentPortf}>
-          {checkedReact && (
-            <Card
-              name="Project 1"
-              cardPhoto={Prof1}
-              cardIcon={react}
-              link="https://github.com/ang92a?tab=repositories"
-            />
-          )}
-          {checkedHtml && (
-            <Card
-              name="Project 2"
-              cardPhoto={Prof2}
-              cardIcon={html}
-              link="https://github.com/ang92a?tab=repositories"
-            />
-          )}
-          {checkedCss && (
-            <Card
-              name="Project 3"
-              cardPhoto={Prof3}
-              cardIcon={css}
-              link="https://github.com/ang92a?tab=repositories"
-            />
-          )}
+          
+          {dataCard
+            .filter((el) => checked.includes(el.key))
+            .map((el) => (
+              <Card
+                name={el.name}
+                cardPhoto={el.cardPhoto}
+                cardIcon={el.cardIcon}
+                link={el.link}
+              />
+            ))}
         </div>
       </div>
     </>
   );
 };
+
+// 1. массив обьектов
+// 2. state с пустым массивом
