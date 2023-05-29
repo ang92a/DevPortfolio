@@ -9,6 +9,7 @@ export const Button = (props) => {
     [s.button__thanks]: thanks,
   });
 
+
   return (
     <button type={type} onClick={handler} className={innerClassName}>
       {title}

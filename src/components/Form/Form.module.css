@@ -48,7 +48,7 @@
 }
 
 html[data-theme="light"] {
-    --col-backgroundd: rgba(96, 123, 150, 0.3);
+    --col-backgroundd: #D5D8EE;
     --box-shadow: none
 }
 
