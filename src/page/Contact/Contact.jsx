@@ -7,6 +7,8 @@ import { ContactRightAside } from "../../components/ContactRightAside/ContactRig
 import { ContentFormMess } from "../../components/ContentFormMess/ContentFormMess";
 
 export const Contact = () => {
+
+  
   const [inputName, setInputName] = useState("");
   const [inputEmail, setInputEmail] = useState("");
   const [inputMessage, setInputMessage] = useState("");

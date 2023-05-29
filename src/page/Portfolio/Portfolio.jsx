@@ -56,7 +56,29 @@ export const Portfolio = () => {
   const check = (name) => setChecked([...checked, name]);
   const uncheck = (name) => setChecked(checked.filter((elem) => elem !== name));
 
-  console.log(checked);
+  const dataCardFilter = () => {
+    return dataCard
+      .filter((el) => checked.includes(el.key))
+      .map((el) => (
+        <Card
+          name={el.name}
+          cardPhoto={el.cardPhoto}
+          cardIcon={el.cardIcon}
+          link={el.link}
+        />
+      ));
+  };
+
+  const dataCardNoFilter = () => {
+    return dataCard.map((el) => (
+      <Card
+        name={el.name}
+        cardPhoto={el.cardPhoto}
+        cardIcon={el.cardIcon}
+        link={el.link}
+      />
+    ));
+  };
 
   return (
     <>
@@ -89,22 +111,11 @@ export const Portfolio = () => {
           <img src={close} alt="close" className={s.iconClose} />
         </div>
         <div className={s.contentPortf}>
-          
-          {dataCard
-            .filter((el) => checked.includes(el.key))
-            .map((el) => (
-              <Card
-                name={el.name}
-                cardPhoto={el.cardPhoto}
-                cardIcon={el.cardIcon}
-                link={el.link}
-              />
-            ))}
+          {checked.length ? dataCardFilter() : dataCardNoFilter()}
         </div>
       </div>
     </>
   );
 };
 
-// 1. массив обьектов
-// 2. state с пустым массивом
+

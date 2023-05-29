@@ -11,8 +11,10 @@ import { Bio } from "../../components/Bio/Bio";
 import close from "../../components/Code/assets/close.svg";
 
 export const About = () => {
+  //хлебные крошки
+  const [currentItem, setCurrentItem] = useState([]);
 
-  // состояние для отрисовки div с информацией 
+  // состояние для отрисовки div с информацией
   const [contentAbout, setcontentAbout] = useState(<Bio />);
 
   // состояние для выделения выбранного пункта меню
@@ -65,9 +67,11 @@ export const About = () => {
           <MenuAccordionAbout
             title="personal-info"
             setcontentAbout={setcontentAbout}
-            active={active}   // состояние которое будет отслеживать активный пункт меню
+            active={active} // состояние которое будет отслеживать активный пункт меню
             setActive={setActive}
             arr={arr}
+            currentItem={currentItem}
+            setCurrentItem={setCurrentItem}
           />
         </div>
       </div>
@@ -86,7 +90,6 @@ export const About = () => {
     </>
   );
 };
-
 
 //нумерация строк автоматически
 // function numeric(number) {

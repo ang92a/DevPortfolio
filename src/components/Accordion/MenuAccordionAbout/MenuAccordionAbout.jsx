@@ -16,7 +16,6 @@ export const MenuAccordionAbout = ({
   setActive,
   arr,
 }) => {
-  
   // выпадающее меню
 
   const [isActiveEd, setIsActiveEd] = useState(false);
